@@ -52,7 +52,6 @@ function createTodoElement(todoObj) {
     todoDiv.classList.add("completed-item");
   }
 
-  // Status Checkbox
   const completedClass = todoObj.completed ? "completed" : "";
   const textClass = todoObj.completed ? "completed-text" : "";
 

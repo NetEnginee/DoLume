@@ -2,14 +2,57 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Taskly | To-Do List Elegant</title>
+
+    <title>Taskly | To-Do List Minimalis & Elegan</title>
+
+    <meta
+      name="description"
+      content="Taskly adalah aplikasi manajemen tugas modern dengan desain Glassmorphism dan Dark Mode. Privasi terjamin dengan penyimpanan lokal (LocalStorage). Ringan, cepat, dan fokus."
+    />
+
+    <meta
+      name="keywords"
+      content="to do list, task manager, aplikasi produktivitas, todo list online, glassmorphism, dark mode, vanilla javascript project"
+    />
+
+    <meta name="author" content="NetEnginee" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://netenginee.github.io/Taskly/" />
+    <meta
+      property="og:title"
+      content="Taskly | Kelola Harimu, Tanpa Gangguan."
+    />
+    <meta
+      property="og:description"
+      content="To-do list simpel yang menyimpan data di browser Anda. Aman, cepat, dan desainnya nyaman di mata."
+    />
+    <meta property="og:image" content="assets/preview-image.jpg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://netenginee.github.io/Taskly/"
+    />
+    <meta property="twitter:title" content="Taskly | Produktivitas Elegan" />
+    <meta
+      property="twitter:description"
+      content="To-do list fokus privasi dengan tampilan modern. Coba sekarang!"
+    />
+    <meta property="twitter:image" content="assets/preview-image.jpg" />
+
+    <meta name="theme-color" content="#1a0b2e" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
-    <link rel="stylesheet" href="style.css" media="all" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -26,5 +69,126 @@
         <span>Repository</span>
       </a>
     </nav>
+
+    <header class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <h1>
+            Kelola Tugas, <br />
+            <span class="highlight-text">Tanpa Gangguan.</span>
+          </h1>
+          <p class="hero-desc">
+            Taskly adalah to do list minimalis yang dibuat agar pengguna dapat
+            fokus pada tugas yang harus diselesaikan. Data tersimpan aman di
+            browser pengguna karena website ini tanpa server sama sekali, dan
+            tanpa loading lama.
+          </p>
+          <a href="#app-area" class="cta-btn">
+            Mulai Sekarang <i class="fas fa-arrow-down"></i>
+          </a>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon-box">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Super Cepat</h3>
+            <p>Dibangun dengan Vanilla JavaScript. Ringan dan cepat.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon-box">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Privasi 100%</h3>
+            <p>
+              Data disimpan di LocalStorage perangkat pengguna. Aman & pribadi.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon-box">
+              <i class="fas fa-feather-alt"></i>
+            </div>
+            <h3>Desain Elegan</h3>
+            <p>UI modern dengan Glassmorphism yang nyaman di mata.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="custom-alert" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-icon">
+          <i class="fas fa-exclamation-circle"></i>
+        </div>
+        <h2>Ups, Kosong!</h2>
+        <p>Silakan ketik tugas yang ingin dikerjakan terlebih dahulu ya.</p>
+        <button id="close-modal-btn">Oke, Siap!</button>
+      </div>
+    </div>
+
+    <main id="app-area">
+      <div class="container">
+        <header class="app-header">
+          <h1>Siap Produktif? Ayo kita Mulai! <span class="emoji">🚀</span></h1>
+          <p>Fokus pada apa yang penting hari ini.</p>
+        </header>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Tambahkan tugas baru..."
+            autocomplete="off"
+          />
+          <button id="add-btn">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+
+        <div class="filter-container">
+          <div class="status-text"><span id="count">0</span> tugas tersisa</div>
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="completed">Selesai</button>
+          </div>
+        </div>
+
+        <ul class="todo-list" id="todo-list"></ul>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo-text">Taskly.</div>
+            <p>
+              Platform manajemen tugas yang mengutamakan privasi dan fokus.
+              Simpel, cepat, dan elegan.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <h4>Navigasi</h4>
+            <ul>
+              <li><a href="#">Beranda</a></li>
+              <li><a href="#app-area">Mulai Tugas</a></li>
+              <li>
+                <a href="https://github.com/NetEnginee/Taskly" target="_blank"
+                  >Repository</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Taskly - Open Source Project.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
